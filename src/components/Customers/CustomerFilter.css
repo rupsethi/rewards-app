@@ -1,0 +1,26 @@
+.customer-filter {
+  padding: 0.5rem 1rem;
+  background-color: rgb(128, 65, 245);
+  width: 50rem;
+  max-width: 95%;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.customer-filter-control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  padding: 0 2rem 0 0;
+}
+
+.customer-filter-control select {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+  display: inline-block;
+}
+
