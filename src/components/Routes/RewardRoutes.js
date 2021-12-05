@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 // import custom dependencies
 import App from "../../App";
-import Transaction from "../Transactions/Transaction";
+import Customer from "../Customers/Customers";
 
 const RewardRoutes = () => {
   // return JSX syntactic sugar for React.createElement
@@ -12,7 +12,7 @@ const RewardRoutes = () => {
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/customer" element={<Navigate to="/" />} />
-        <Route path="/customer/:customerId" element={<Transaction />} />
+        <Route path="/customer/:customerId" element={<Customer />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>

@@ -1,28 +1,25 @@
 // import core dependencies
-import React, { Fragment, useContext } from "react";
-import { NavLink, useParams, Outlet } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link, useParams } from "react-router-dom";
 
 // import custom dependencies
-import { RewardsContext } from "../../Contexts/RewardsContext";
 import List from "../UI/List";
 
 // import component stylesheet
 import "./CustomerRewards.css";
 
-const CustomerRewards = () => {
+const CustomerRewards = ({ customer, rewards }) => {
   const { customerId } = useParams();
-
-  const { reward } = useContext(RewardsContext);
 
   let rewardsContent = <p>Sorry, no rewards found at this time.</p>;
 
-  if (Object.keys(reward).length > 0) {
-    rewardsContent = Object.keys(reward.rewards).map((rewardItem) =>
+  if (Object.keys(rewards).length > 0) {
+    rewardsContent = Object.keys(rewards).map((rewardItem) =>
       rewardItem !== "total" ? (
         <List
           key={rewardItem}
           title={rewardItem}
-          reward={`${reward.rewards[rewardItem]} Pts.`}
+          reward={`${rewards[rewardItem]} Pts.`}
           text="earned"
         />
       ) : (
@@ -36,15 +33,14 @@ const CustomerRewards = () => {
     <Fragment>
       <div className="rewards">
         <h2 className="rewards-title">Rewards Earned In Last Three Months:</h2>
-        <NavLink
-          to={customerId ? "/" : `/customer/${reward.customerId}`} 
+        <Link
+          to={customerId ? "/" : `/customer/${customer}`}
           className="rewards-title-viewlink"
         >
           {customerId ? "All Customers" : "View Details"}
-        </NavLink>
+        </Link>
         {rewardsContent}
       </div>
-      <Outlet />
     </Fragment>
   );
 };
