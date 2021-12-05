@@ -8,7 +8,7 @@
 - Support `fliters`, based on the customer for a quick rewards recap;
 - Support `routes` in React UI, to reflect customer complete detail including transactions;
 - Expose `Mockup API` with test data for customer transactions.
-- Additional features are like, `Custom Hook`, `Global Config`, `Context API` and `Utils` with Components reuseability;
+- Additional features are like, `Custom Hook`, `Global Config` and `Utils` with Components reuseability;
 
 **Table of Contents**
 
